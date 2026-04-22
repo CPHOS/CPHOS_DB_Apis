@@ -40,7 +40,22 @@ for i in range(2, rowmax + 1):
     teacher_name = ws.cell(row=i, column=1).value
     teacher_school = ws.cell(row=i, column=5).value
     teacher_area = ws.cell(row=i, column=6).value
-    teacher_area = teacher_area[:2]  # 省份名字
+    teacher_area = ws.cell(row=i, column=6).value
+    if teacher_area.startswith('内蒙古'):
+        teacher_area = '内蒙古'
+    elif teacher_area.startswith('新疆'):
+        teacher_area = '新疆'
+    elif teacher_area.startswith('广西'):
+        teacher_area = '广西'
+    elif teacher_area.startswith('西藏'):
+        teacher_area = '西藏'
+    elif teacher_area.startswith('宁夏'):
+        teacher_area = '宁夏'
+    elif '省' in teacher_area:
+        teacher_area = teacher_area.split('省')[0].strip()
+    elif '市' in teacher_area:
+        teacher_area = teacher_area.split('市')[0].strip()
+        
     teacher_sup = ws.cell(row=i, column=7).value  # 如果是0，则是领队教练，不是副领队
     teacher_students = 100
 
