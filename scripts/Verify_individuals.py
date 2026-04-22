@@ -37,7 +37,7 @@ rowmax = ws.max_row
 for i in range(2, rowmax + 1):
     user_nickname = ws.cell(row=i, column=3).value  # user_nickname小程序中使用的是虚拟id，注意使用虚拟id
     teacher_name = ws.cell(row=i, column=1).value
-    teacher_school = ws.cell(row=i, column=5).value
+    # teacher_school = ws.cell(row=i, column=5).value
     teacher_area = ws.cell(row=i, column=6).value
     teacher_area = teacher_area
     teacher_students = 1
